@@ -60,6 +60,29 @@ public class DateAndTime_04_Test {
         assertThat(second, is(0));
     }
     
+    @Test
+    public void test_localDateTime_parse2() {
+
+        // TODO créer un objet LocalDateTime à l'heure 2 mars 2009 à 09h30m00s à l'aide de la méthode parse
+        LocalDateTime result = LocalDateTime.parse("2 mars 2009 à 09h30m00s", DateTimeFormatter.ofPattern("d MMM yyyy' à 'HH'h'mm'm'ss's'"));
+
+        // TODO valoriser les différentes variables afin de rendre le test passant
+        int hour = result.getHour();
+        int minutes = result.getMinute();
+        int second = result.getSecond();
+
+        int year = result.getYear();
+        Month month = result.getMonth();
+        int dayOfMonth = result.getDayOfMonth();
+
+        assertThat(year, is(2009));
+        assertThat(month, is(Month.MARCH));
+        assertThat(dayOfMonth, is(2));
+
+        assertThat(hour, is(9));
+        assertThat(minutes, is(30));
+        assertThat(second, is(0));
+    }
    
     @Test
     public void test_localDateTime_format() {
