@@ -26,8 +26,16 @@ public class Customer {
         this.lastname = lastname;
         this.gender = gender;
     }
+    
+    
 
-    public Integer getId() {
+    @Override
+	public String toString() {
+		return "Customer [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", gender=" + gender
+				+ "]";
+	}
+
+	public Integer getId() {
         return id;
     }
 
